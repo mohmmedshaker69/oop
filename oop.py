@@ -1,23 +1,23 @@
 from datetime import date
 
-# class Math:
+class Math:
 
-#     def add(x,y):
-#         return x+y
+    def add(x,y):
+        return x+y
     
-#     def add_5(num):
-#         return num+5
+    def add_5(num):
+        return num+5
     
-#     def add_10(y):
-#         return y+10
+    def add_10(y):
+        return y+10
     
-# x=Math.add(5,5)
+x=Math.add(5,5)
 
-# z=Math.add_5(x)
+z=Math.add_5(x)
 
-# y=Math.add_10(z)
+y=Math.add_10(z)
 
-# print(x,z,y)
+print(x,z,y)
 
 
 #converting name and age to private by to underscore = encapulation.
@@ -118,3 +118,60 @@ class Women(Person):
     def display(self):
         string= super().display()
         return string + self.hair
+    
+
+
+    #polymor+inhertance+over riding
+class Vehicle:
+  def __init__(self, brand, model):
+    self.brand = brand
+    self.model = model
+
+  def move(self):
+    print("Move!")
+
+class Car(Vehicle):
+  pass
+
+class Boat(Vehicle):
+  def move(self):
+    print("Sail!")
+
+class Plane(Vehicle):
+  def move(self):
+    print("Fly!")
+
+
+
+
+
+
+from abc import ABC, abstractmethod
+
+class AccountingSystem(ABC):
+
+    @abstractmethod
+    def create_purchase_invoice(self, purchase):
+        pass
+
+    @abstractmethod
+    def create_sale_invoice(self, sale):
+        print('Creating sale invoice', sale)
+
+
+
+#poly overloading but in python it won't work
+
+class Sat:
+    def sum (self,x,y):
+        return x+y
+    
+    def sum(self,x,y,z):
+        return x+y+z
+    
+   
+    
+f=Sat.sum(10,2)
+g=Sat.sum(10,5,6)
+
+print(f,g)
