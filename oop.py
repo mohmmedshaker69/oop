@@ -175,3 +175,51 @@ f=Sat.sum(10,2)
 g=Sat.sum(10,5,6)
 
 print(f,g)
+
+
+
+
+
+class MyContainer:
+    def __init__(self, data):
+        self.data = data
+
+    def __getitem__(self, index):
+        return self.data[index]
+
+
+container = MyContainer([1, 2, 3, 4, 5])
+print(container[2])
+
+
+
+class MyContainer1:
+    def __init__(self):
+        self.data = {}
+
+    def __setitem__(self, key, value):
+        self.data[key] = value
+
+
+container = MyContainer1()
+container['key1'] = 'value1'
+container['key2'] = 'value2'
+
+print(container.data)
+
+
+
+
+class MyContainer2:
+    def __init__(self):
+        self.data = {}
+
+    def __delitem__(self, key):
+        del self.data[key]
+
+
+container = MyContainer2()
+container.data['key1'] = 'value1'
+container.data['key2'] = 'value2'
+
+del container['key1']
